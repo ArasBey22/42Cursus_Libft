@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haras <haras@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 11:43:39 by haras             #+#    #+#             */
-/*   Updated: 2025/06/11 11:45:37 by haras            ###   ########.fr       */
+/*   Created: 2025/06/11 11:54:56 by haras             #+#    #+#             */
+/*   Updated: 2025/06/11 11:55:00 by haras            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*source_pointer;
-	unsigned char		*dest_pointer;
 	size_t				index;
+	const unsigned char	*s2_pointer;
+	const unsigned char	*s1_pointer;
 
-	dest_pointer = (unsigned char *)dest;
-	source_pointer = (const unsigned char *)src;
-	if (dest == NULL || src == NULL)
-		return (NULL);
+	s1_pointer = (const unsigned char *)s1;
+	s2_pointer = (const unsigned char *)s2;
 	index = 0;
 	while (index < n)
 	{
-		dest_pointer[index] = source_pointer[index];
+		if (s1_pointer[index] != s2_pointer[index])
+			return ((int)s1_pointer[index] - (int)s2_pointer[index]);
 		index++;
 	}
-	return (dest);
+	return (0);
 }
