@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*location_pointer;
 
+	if (nmemb != 0 && size != 0 && (nmemb * size) / nmemb != size)
+		return (NULL);
 	location_pointer = malloc(size * nmemb);
 	if (!location_pointer)
 		return (NULL);
