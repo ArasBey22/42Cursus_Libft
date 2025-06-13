@@ -23,5 +23,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	if (dest_pointer < source_pointer)
 	{
+		while (n--)
+			*dest_pointer++ = *source_pointer++;
 	}
+	else
+	{
+		dest_pointer += n;
+		source_pointer += n;
+		while (n--)
+			*(--dest_pointer) = *(--source_pointer);
+	}
+	return (dest);
 }
