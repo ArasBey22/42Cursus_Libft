@@ -6,7 +6,7 @@
 /*   By:  haras <haras@student.42istanbul.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:44:06 by  haras            #+#    #+#             */
-/*   Updated: 2025/06/14 19:24:09 by  haras           ###   ########.fr       */
+/*   Updated: 2025/06/15 12:15:28 by  haras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	size_t	start;
 	size_t	end;
-	size_t	index;
 	char	*result;
 
 	if (!s1 || !set)
@@ -47,13 +46,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
-	index = 0;
-	while (index < len)
-	{
-		result[index] = s1[start];
-		start++;
-		index++;
-	}
-	result[index] = '\0';
+	ft_strlcpy(result, s1 + start, len + 1);
 	return (result);
 }
