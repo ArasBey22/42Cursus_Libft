@@ -6,74 +6,93 @@
 /*   By:  haras <haras@student.42istanbul.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 12:10:32 by  haras            #+#    #+#             */
-/*   Updated: 2025/06/15 15:39:42 by  haras           ###   ########.fr       */
+/*   Updated: 2025/06/19 16:36:53 by  haras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	check_delimiter(const char source, const char delimiter)
+size_t	check_delimiter(const char c, const char delimiter)
 {
-	if (source == delimiter)
-		return (1);	
+	if (c == delimiter)
+		return (1);
 	return (0);
 }
 
-size_t	lenght_of_string(const char *s, const char delimeter)
+size_t	count_words(const char *s, const char delimiter)
 {
-	size_t	len;
+	size_t	word_count;
 	size_t	index;
-	
+
+	word_count = 0;
 	index = 0;
-	len = 0;
-	while (s[index] && !check_delimiter(s[index], delimeter))
+	while (s[index])
 	{
-		len++;
-		index++;
+		while (s[index] && check_delimiter(s[index], delimiter))
+			index++;
+		if (s[index])
+			word_count++;
+		while (s[index] && !check_delimiter(s[index], delimiter))
+			index++;
 	}
-	return(len);
+	return (word_count);
 }
 
-int	check_memory(char	**string, size_t	arr_index) 
+static void	free_all(char **res, int last_index)
 {
-	size_t	index;
+	while (--last_index >= 0)
+		free(res[last_index]);
+	free(res);
+}
 
+static int	fill_word(char const *s, char c, char **res)
+{
+	int	i;
+	int	word_len;
+	int	start;
+	int	index;
+
+	i = 0;
+	start = 0;
 	index = 0;
-	if (!string[arr_index])
+	while (s[i])
 	{
-		while (index <= arr_index)
+		word_len = 0;
+		while (s[i] && s[i] == c)
 		{
-			free(string[index]);
+			i++;
+			start++;
+		}
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			word_len++;
+		}
+		if (word_len > 0)
+		{
+			res[index] = ft_substr(s, start, word_len);
+			if (!res[index])
+				return (free_all(res, index), 0);
 			index++;
 		}
-		return (0);
+		start += word_len;
 	}
 	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	index;
-	size_t	arr_index;
-	size_t	len;	
 	char	**result;
+	size_t	word_count;
 
-	index = 0;
-	arr_index = 0;
-	while (s[index])
-	{
-		if (check_delimiter(s[index], c))
-		{
-			//   eski hesap len = ft_strlen(s) - ft_strlen(s + index);
-			len = lenght_of_string(s + index, c);
-			result[arr_index] = (char *)malloc(sizeof(char) * (len + 1));
-			if (check_memory(result[arr_index],	arr_index))
-			{
-				ft_strlcpy(result[arr_index], s + index, len + 1);
-				arr_index++;
-			}
-		}
-		index++;
-	}
+	if (!s)
+		return (NULL);
+	word_count = count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!result)
+		return (NULL);
+	if (!fill_word(s, c, result))
+		return (NULL);
+	result[word_count] = NULL;
 	return (result);
 }

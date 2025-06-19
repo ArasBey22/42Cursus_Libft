@@ -1,6 +1,22 @@
 #include "libft.h"
 #include <stdio.h>
 
+
+/*
+
+int main(int argc, char const *argv[])
+{
+	char *str = malloc(5);
+	str[4] = NULL;
+	ft_memset(&str[3], 'R', 1);
+	ft_memset(&str[2], 'I', 1);
+	ft_memset(&str[1], 'M', 1);
+	ft_memset(&str[0], 'E', 1);
+	return 0;
+}
+
+
+/*
 int	main(void)
 {
 	// isalpha test
