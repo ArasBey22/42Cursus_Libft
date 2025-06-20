@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  haras <haras@student.42istanbul.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:01:02 by haras             #+#    #+#             */
-/*   Updated: 2025/06/20 13:54:23 by  haras           ###   ########.fr       */
+/*   Created: 2025/06/20 15:35:20 by  haras            #+#    #+#             */
+/*   Updated: 2025/06/20 15:35:54 by  haras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*pointer;
-	size_t			index;
-
-	pointer = (unsigned char *)s;
-	index = 0;
-	while (index < n)
-	{
-		pointer[index] = (unsigned char)c;
-		index++;
-	}
-	return (s);
 }
