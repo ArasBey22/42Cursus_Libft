@@ -6,7 +6,7 @@
 /*   By: haras <haras@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:53:45 by haras             #+#    #+#             */
-/*   Updated: 2025/06/22 14:43:23 by haras            ###   ########.fr       */
+/*   Updated: 2025/06/22 14:46:02 by haras            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*location_pointer;
 
-	if (nmemb == 0 && size == 0)
+	if (nmemb != 0 && size != 0 && (nmemb * size) / nmemb != size)
 		return (NULL);
 	location_pointer = malloc(size * nmemb);
 	if (!location_pointer)
