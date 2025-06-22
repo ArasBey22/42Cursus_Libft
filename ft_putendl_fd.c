@@ -6,7 +6,7 @@
 /*   By: haras <haras@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 11:46:45 by haras             #+#    #+#             */
-/*   Updated: 2025/06/22 11:49:52 by haras            ###   ########.fr       */
+/*   Updated: 2025/06/22 14:43:20 by haras            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	index;
+	size_t	i;
 
 	if (!s)
 		return ;
-	index = 0;
-	while (s[index])
+	i = 0;
+	while (s[i])
 	{
-		write(fd, &s[index], 1);
-		index++;
+		write(fd, &s[i], 1);
+		i++;
 	}
 	write(fd, "\n", 1);
 }
