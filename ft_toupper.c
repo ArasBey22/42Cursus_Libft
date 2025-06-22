@@ -6,11 +6,9 @@
 /*   By: haras <haras@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:01:54 by haras             #+#    #+#             */
-/*   Updated: 2025/06/10 15:01:57 by haras            ###   ########.fr       */
+/*   Updated: 2025/06/22 12:33:07 by haras            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haras <haras@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:01:33 by haras             #+#    #+#             */
-/*   Updated: 2025/06/22 12:33:00 by haras            ###   ########.fr       */
+/*   Created: 2025/06/22 11:46:45 by haras             #+#    #+#             */
+/*   Updated: 2025/06/22 11:49:52 by haras            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	int	index;
+
+	if (!s)
+		return ;
+	index = 0;
+	while (s[index])
+	{
+		write(fd, &s[index], 1);
+		index++;
+	}
+	write(fd, "\n", 1);
 }
