@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  haras <haras@student.42istanbul.com.tr    +#+  +:+       +#+        */
+/*   By: haras <haras@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:44:06 by  haras            #+#    #+#             */
-/*   Updated: 2025/06/15 12:15:28 by  haras           ###   ########.fr       */
+/*   Updated: 2025/06/26 14:33:31 by haras            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	check_letter(const char s1, const char *set)
+static size_t	check_letter(const char s1, const char *set)
 {
 	size_t	index;
 
