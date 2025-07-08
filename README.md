@@ -1,3 +1,46 @@
+# Libft
+
+Libft, C dilinde temel string ve bellek (memory) işlemleri ile çeşitli yardımcı fonksiyonların yeniden implemente edildiği bir kütüphanedir. Bu proje, 42 okulu müfredatına uygundur ve standart C fonksiyonlarının bazılarını kendi başına sıfırdan yazmanı sağlar.
+
+## İçerik
+
+### Karakter Kontrol Fonksiyonları
+
+- `ft_isalpha`   : Karakterin alfabetik olup olmadığını kontrol eder.
+- `ft_isdigit`   : Karakterin rakam olup olmadığını kontrol eder.
+- `ft_isalnum`   : Karakterin alfabetik veya rakam olup olmadığını kontrol eder.
+- `ft_isascii`   : Karakterin ASCII aralığında olup olmadığını kontrol eder.
+- `ft_isprint`   : Karakterin yazdırılabilir olup olmadığını kontrol eder.
+- `ft_toupper`   : Küçük harfi büyüğe çevirir.
+- `ft_tolower`   : Büyük harfi küçüğe çevirir.
+
+### String ve Bellek Fonksiyonları
+
+- `ft_strlen`    : String uzunluğunu döner.
+- `ft_memset`    : Belleği belirtilen değerle doldurur.
+- `ft_bzero`     : Belleği sıfırlar.
+- `ft_memcpy`    : Belleği kopyalar (overlap yoksa).
+- `ft_memmove`   : Belleği güvenli şekilde kopyalar (overlap destekler).
+- `ft_strlcpy`   : Stringi güvenli şekilde kopyalar (buffer taşmasını önler).
+- `ft_strlcat`   : Stringleri güvenli şekilde birleştirir (buffer taşmasını önler).
+- `ft_strdup`    : Stringin bir kopyasını oluşturur.
+- `ft_calloc`    : Bellek ayırır ve sıfırlar.
+
+### Arama ve Karşılaştırma Fonksiyonları
+
+- `ft_strchr`    : String içinde karakter arar (ilk geçtiği yer).
+- `ft_strrchr`   : String içinde karakter arar (son geçtiği yer).
+- `ft_strncmp`   : İki stringi belirli uzunlukta karşılaştırır.
+- `ft_memchr`    : Bellekte karakter arar.
+- `ft_memcmp`    : Bellek bloklarını karşılaştırır.
+- `ft_strnstr`   : String içinde substring arar.
+
+### Diğer Fonksiyonlar
+
+- `ft_atoi`      : Stringi tam sayıya çevirir.
+- `ft_substr`    : Stringin belirli bir indeksinden itibaren alt string oluşturur.
+- `ft_strjoin`   : İki stringi birleştirir.
+- `ft_strtrim`   : Stringin başından ve sonundan belirli karakterleri kırpar.
 - `ft_split`     : Stringi verilen ayırıcıya göre böler.
 - `ft_itoa`      : Tam sayıyı stringe çevirir.
 - `ft_strmapi`   : Her karaktere fonksiyon uygulayarak yeni string oluşturur.
