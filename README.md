@@ -53,58 +53,10 @@ Libft, C dilinde temel string ve bellek (memory) işlemleri ile çeşitli yardı
 ## Proje Detayları
 
 - **Kullanılan Dosyalar:** `Makefile`, `libft.h`, `ft_*.c`
-- Tüm dosyalar proje ana klasöründe yer almalı.
-- Kod, Norm kurallarına uygun olmalıdır. (Norm hatası = 0 puan)
-- Global değişken kullanımı yasak. Yardımcı fonksiyonlar `static` olmalıdır.
 - Derleme flag'leri: `-Wall -Wextra -Werror`
 - Makefile hedefleri: `NAME`, `all`, `clean`, `fclean`, `re`
-- Kütüphane, ar arşivi (`libft.a`) olarak oluşturulmalı.
-- Libtool kullanımı yasak.
+- Kütüphane, ar arşivi (`libft.a`)
 - `malloc` ile ayrılan bellek mutlaka `free` edilmelidir.
-- Segfault, double free veya crash kabul edilmez.
-- `libft.a` proje kökünde olmalıdır.
-- Sadece git’e gönderilen dosyalar değerlendirilir.
-
-### Sistem ve Test Notları
-
-- Bazı fonksiyonlar (`strlcpy`, `strlcat`, `bzero`) GNU C Kütüphanesinde (glibc) standart değildir.
-- Linux/glibc ortamında test için `<bsd/string.h>` dahil edilip, `-lbsd` ile derleme gerekebilir.
-
-## Örnek Kullanım
-
-```c
-#include <fcntl.h>
-#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-    int fd = open("cikti", O_CREAT | O_RDWR | O_TRUNC, 0777);
-    if (fd == -1)
-    {
-        perror("Hata Çıktısı");
-        return (1);
-    }
-    ft_putstr_fd("selam", fd);
-    close(fd);
-    return (0);
-}
-```
-
-## Derleme
-
-Projeyi derlemek için:
-```sh
-make
-```
-
-## Temizlik Komutları
-
-```sh
-make clean    # Nesne dosyalarını siler
-make fclean   # Nesne dosyalarını ve libft.a'yı siler
-make re       # Yeniden derler
-```
 
 ## Lisans
 
